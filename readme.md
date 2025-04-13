@@ -1,1 +1,7 @@
-THIS IS THE READ ME 
+# Radiant V1.2
+
+## Description
+For Radiant Radios Website
+
+
+
