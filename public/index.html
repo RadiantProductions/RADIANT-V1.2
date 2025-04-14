@@ -1,0 +1,129 @@
+<!-- Sample music is loaded here on frontend, will update to allow easier backend integration -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AzuraCast Web Player</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav class="main-navbar">
+        <ul class="navbar-links">
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="login.html" class="navbar-login-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="player-app" id="player-app">
+        <div class="app-main-background"></div>
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-headphones-alt logo-icon"></i>
+                <span class="logo-text">AzuraCast-Player</span>
+            </div>
+            <button class="menu-button" id="sidebar-toggle-button" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+
+        <main class="app-main">
+            <div class="station-prompt">
+                 <div class="station-prompt-icon">
+                     <i class="fas fa-broadcast-tower"></i>
+                 </div>
+                 <h1>Pick a Station</h1>
+                 <p>This is a music streaming player for the channels provided by AzuraCast. Just pick a station from the sidebar to the right to start listening.</p>
+                 <button class="view-stations-button" id="view-stations-button">
+                     <i class="fas fa-headphones-alt"></i> View Stations
+                 </button>
+            </div>
+        </main>
+
+        <footer class="player-controls-bar">
+            <div class="controls-left">
+                <button id="play-pause-button" class="control-btn play-pause-btn" aria-label="Play">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="volume-button" class="control-btn volume-btn" aria-label="Volume">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                 <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="0.8" aria-label="Volume Slider">
+            </div>
+            <div class="progress-container">
+                <span id="current-time" class="time-display">0:00</span>
+                <div id="progress-bar" class="progress-bar" tabindex="0" role="slider" aria-label="Seek Progress">
+                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                     <div id="progress-bar-handle" class="progress-bar-handle"></div>
+                </div>
+                <span id="total-duration" class="time-display">0:00</span>
+            </div>
+            <div class="controls-right"></div>
+        </footer>
+
+        <audio id="audio-player-element" src="/public/assets/sample.mp3" preload="metadata"></audio>
+
+    </div>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="search" placeholder="Search station..." class="search-input">
+            </div>
+            <button class="sidebar-close-button" id="sidebar-close-button" aria-label="Close Sidebar">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="station-list">
+            <li class="station-item">
+                <img src="assets/placeholder-album.png" alt="Station Art" class="station-icon">
+                <div class="station-info">
+                    <span class="station-name">RR Pop</span>
+                    <span class="station-description">Radiant Radios Pop Station</span>
+                </div>
+                <div class="station-extra-icons">
+                    <i class="fas fa-headphones-alt"></i>
+                    <i class="fas fa-signal"></i>
+                </div>
+            </li>
+            <li class="station-item">
+                 <img src="assets/placeholder-album.png" alt="Station Art" class="station-icon">
+                 <div class="station-info">
+                     <span class="station-name">RR Country</span>
+                     <span class="station-description">Radiant Radios Country Station</span>
+                 </div>
+                 <div class="station-extra-icons">
+                     <i class="fas fa-headphones-alt"></i>
+                     <i class="fas fa-signal"></i>
+                 </div>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <label for="sort-select">Sort:</label>
+            <select id="sort-select" class="sort-select">
+                <option value="listeners">Listeners Count</option>
+                <option value="name">Name</option>
+                <option value="genre">Genre</option>
+            </select>
+            <button class="download-button" aria-label="Download">
+                 <i class="fas fa-download"></i>
+            </button>
+        </div>
+    </aside>
+
+    <script src="js/main.js"></script>
+    <script src="js/components/navbar.js"></script>
+    <script src="js/player.js"></script>
+
+</body>
+</html>

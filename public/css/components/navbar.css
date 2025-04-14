@@ -1,0 +1,72 @@
+.main-navbar {
+    margin: var(--space-md) var(--space-lg) 0;
+    width: calc(100% - (var(--space-lg) * 2));
+    border-radius: 12px;
+    background-color: var(--bg-secondary);
+    padding: var(--space-sm) var(--space-lg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.navbar-links li a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: var(--space-xs) var(--space-md);
+    border-radius: 8px;
+    transition: background-color var(--transition-speed) var(--transition-timing),
+                color var(--transition-speed) var(--transition-timing),
+                box-shadow var(--transition-speed) var(--transition-timing);
+    display: inline-block;
+    font-size: 0.95em;
+    border: none;
+    position: relative;
+}
+.navbar-links li a:focus {
+    outline: none;
+}
+
+.navbar-links li a:hover {
+    color: var(--accent-primary);
+    background-color: var(--bg-tertiary);
+}
+
+.navbar-links li a:focus-visible {
+     color: var(--accent-primary);
+     background-color: var(--bg-tertiary);
+     box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--focus-ring-color);
+     outline: none;
+}
+
+.navbar-links li a.navbar-login-link {
+    background-color: var(--accent-primary);
+    color: var(--bg-primary);
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-links li a.navbar-login-link:hover {
+    background-color: var(--accent-secondary);
+    color: var(--bg-primary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-links li a.navbar-login-link:focus-visible {
+     background-color: var(--accent-secondary);
+     color: var(--bg-primary);
+     box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--accent-secondary);
+     outline: none;
+}
+
+/* Mobile Optimization will go here */
